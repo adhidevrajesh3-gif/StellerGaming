@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About Google — Overview & Products</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#4285f4;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:linear-gradient(180deg,#081025 0%, #051124 100%);
+      color:#e6eef8; -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    .wrap{max-width:980px;margin:32px auto;padding:24px;}
+    header{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+    .logo{
+      width:64px;height:64px;border-radius:12px;background:linear-gradient(45deg,var(--accent),#34a853);
+      display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;color:white;
+      box-shadow:0 6px 18px rgba(2,6,23,0.6);
+    }
+    nav{margin-left:auto;display:flex;gap:12px}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:600;font-size:14px}
+    nav a:hover{background:var(--glass);color:#fff}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:center;margin-bottom:26px}
+    .hero .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:20px;border-radius:14px;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    h1{margin:0;font-size:28px;letter-spacing:-0.4px}
+    p.lead{color:var(--muted);margin:12px 0 0}
+    .cta{margin-top:16px;display:flex;gap:12px}
+    .btn{background:var(--accent);border:none;color:white;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer}
+    .outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:10px 14px;border-radius:10px;cursor:pointer}
+    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:14px}
+    .feature{background:var(--glass);padding:12px;border-radius:10px}
+    .aside{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);box-shadow:inset 0 1px 0 rgba(255,255,255,0.02)}
+    .products{display:flex;flex-direction:column;gap:10px}
+    .product{display:flex;gap:12px;align-items:center;padding:10px;border-radius:10px;background:rgba(255,255,255,0.02)}
+    .product .dot{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700}
+    footer{margin-top:30px;color:var(--muted);font-size:13px;text-align:center;padding:10px}
+    /* responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr; }
+      nav{display:none}
+      .wrap{padding:16px}
+    }
+    /* sections */
+    section{margin-top:20px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .card-simple{background:var(--card);padding:16px;border-radius:10px}
+    @media (max-width:880px){ .grid-3{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo" aria-hidden>G</div>
+      <div>
+        <div style="font-weight:700">About Google</div>
+        <div style="color:var(--muted);font-size:13px">Products, history, and quick links</div>
+      </div>
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#products">Products</a>
+        <a href="#history">History</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div class="card">
+        <h1 id="overview">Google — organizing the world’s information</h1>
+        <p class="lead">Google is a global technology company known for search, advertising platforms, and a broad family of consumer & enterprise products that help billions of people every day.</p>
+        <div class="cta">
+          <button class="btn" onclick="openOfficial()">Official site</button>
+          <button class="outline" onclick="scrollToSection('products')">See products</button>
+        </div>
+
+        <div class="features" style="margin-top:18px">
+          <div class="feature">
+            <strong>Search</strong><div style="color:var(--muted);font-size:13px">Fast, helpful results</div>
+          </div>
+          <div class="feature">
+            <strong>Cloud</strong><div style="color:var(--muted);font-size:13px">Tools for businesses & developers</div>
+          </div>
+          <div class="feature">
+            <strong>Android</strong><div style="color:var(--muted);font-size:13px">Mobile OS powering billions</div>
+          </div>
+          <div class="feature">
+            <strong>AI</strong><div style="color:var(--muted);font-size:13px">Research & products</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="aside">
+        <h3 style="margin:0 0 10px 0">Popular products</h3>
+        <div class="products">
+          <div class="product"><div class="dot" style="background:#4285f4">S</div><div><strong>Search</strong><div style="color:var(--muted);font-size:13px">search.google.com</div></div></div>
+          <div class="product"><div class="dot" style="background:#34a853">G</div><div><strong>Gmail</strong><div style="color:var(--muted);font-size:13px">email by Google</div></div></div>
+          <div class="product"><div class="dot" style="background:#fbbc05">Y</div><div><strong>Maps</strong><div style="color:var(--muted);font-size:13px">maps & navigation</div></div></div>
+          <div class="product"><div class="dot" style="background:#ea4335">A</div><div><strong>Android</strong><div style="color:var(--muted);font-size:13px">mobile OS</div></div></div>
+        </div>
+      </aside>
+    </div>
+
+    <section id="products">
+      <h2 style="margin:0 0 8px 0">Products & Services</h2>
+      <div class="grid-3" style="margin-top:8px">
+        <div class="card-simple">
+          <h4 style="margin:0 0 8px 0">Search</h4>
+          <p style="color:var(--muted);margin:0;font-size:14px">World’s most used search engine with web, images, news, and more.</p>
+        </div>
+        <div class="card-simple">
+          <h4 style="margin:0 0 8px 0">Gmail & Workspace</h4>
+          <p style="color:var(--muted);margin:0;font-size:14px">Email, Docs, Drive — productivity tools for work and school.</p>
+        </div>
+        <div class="card-simple">
+          <h4 style="margin:0 0 8px 0">Cloud Platform</h4>
+          <p style="color:var(--muted);margin:0;font-size:14px">Infrastructure, ML tools, and hosted services for businesses.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="history">
+      <h2 style="margin:10px 0 8px 0">A short timeline</h2>
+      <div style="color:var(--muted);font-size:14px">
+        <ul>
+          <li><strong>1998</strong> — Google founded by Larry Page & Sergey Brin.</li>
+          <li><strong>2004</strong> — IPO and expansion into products like Gmail.</li>
+          <li><strong>2008–present</strong> — Android, Cloud, AI advances and more.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 style="margin:10px 0 8px 0">Contact & links</h2>
+      <p style="color:var(--muted)">Use official resources for company contact and press: <span id="official" style="color:var(--accent);font-weight:700;cursor:pointer" onclick="openOfficial()">visit official site</span>.</p>
+    </section>
+
+    <footer>Made with this template • Customize the text & branding • © <span id="year"></span></footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function openOfficial(){
+      window.open('https://www.google.com','_blank');
+    }
+    function scrollToSection(id){
+      const el = document.getElementById(id);
+      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  </script>
+</body>
+</html>
